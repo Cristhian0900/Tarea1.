@@ -6,19 +6,24 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f5f5f5;
+      background: #f0f4f8;  /* Fondo suave azul claro */
       margin: 0;
       padding: 0;
       color: #333;
     }
     header {
-      background: #222;
+      background: #4e8fd1; /* Azul suave */
       color: white;
       text-align: center;
       padding: 20px;
     }
     h1 {
       margin: 0;
+      font-size: 2.5em;
+    }
+    header p {
+      font-size: 1.2em;
+      color: #ffffff;
     }
     section {
       background: white;
@@ -26,7 +31,7 @@
       padding: 20px;
       border-radius: 10px;
       max-width: 900px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Sombra suave */
     }
     section img {
       max-width: 200px;
@@ -34,11 +39,29 @@
       margin: 10px auto;
     }
     h2 {
-      color: #004080;
+      color: #5a8fdd; /* Título con azul suave */
     }
     .example {
       font-style: italic;
+      color: #777;  /* Gris suave para el ejemplo */
+    }
+    p {
+      font-size: 1.1em;
+      line-height: 1.6;
+      color: #555;  /* Texto en gris oscuro para buena legibilidad */
+    }
+    ul {
       color: #555;
+      font-size: 1.1em;
+    }
+    li {
+      margin: 5px 0;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: #777;
+      margin-top: 30px;
     }
   </style>
 </head>
@@ -97,6 +120,10 @@
     </ul>
     <p class="example"><strong>Ejemplo:</strong> Gmail usa SMTP para enviar mensajes e IMAP para que tus correos estén sincronizados en todos tus dispositivos.</p>
   </section>
+
+  <footer>
+    <p><strong>Consejo:</strong> Puedes reemplazar los íconos SVG por imágenes reales (PNG/JPG) si tu profesor lo pide. Guarda las imágenes en una carpeta <code>img/</code> y cámbialas en el HTML dentro de cada sección.</p>
+  </footer>
 
 </body>
 </html>
