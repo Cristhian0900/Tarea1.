@@ -6,15 +6,16 @@
   <title>Servidores de Internet</title>
   <style>
     :root{
-      --bg:#0f172a;        /* slate-900 */
-      --card:#111827cc;    /* gray-900 w/ alpha */
-      --ink:#e5e7eb;       /* gray-200 */
-      --muted:#cbd5e1;     /* slate-300 */
-      --accent:#22d3ee;    /* cyan-400 */
-      --accent2:#a78bfa;   /* violet-400 */
+      --bg:#121212;        /* Fondo oscuro */
+      --card:#2d2d2d;      /* Fondo de las tarjetas */
+      --ink:#f0f0f0;       /* Texto claro */
+      --muted:#b3b3b3;     /* Texto tenue */
+      --accent:#ff6347;    /* Naranja brillante */
+      --accent2:#32cd32;   /* Verde brillante */
+      --highlight:#ff1493; /* Rosa brillante */
     }
     *{box-sizing:border-box}
-    html,body{margin:0; padding:0; background: radial-gradient(1200px 600px at 10% 0%, #1f2937 0, var(--bg) 60%); color:var(--ink); font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";}
+    html,body{margin:0; padding:0; background: linear-gradient(1200px 600px at 10% 0%, #1f2937 0, var(--bg) 60%); color:var(--ink); font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";}
     header{
       padding: 48px 16px 24px;
       text-align:center;
@@ -36,7 +37,12 @@
       display:flex; flex-wrap:wrap; gap: 8px; justify-content:center;
     }
     nav a{
-      text-decoration:none; color:var(--ink); border:1px solid #334155; padding:8px 12px; border-radius:999px; font-size:14px;
+      text-decoration:none; color:var(--highlight); border:1px solid #334155; padding:8px 12px; border-radius:999px; font-size:14px;
+    }
+    nav a:hover{
+      background-color: var(--accent);
+      color: white;
+      border-color: var(--accent);
     }
     main{
       max-width: 1024px; margin: 24px auto 60px; padding: 0 16px;
@@ -47,18 +53,24 @@
       border:1px solid #1f2937; border-radius:16px; padding:18px;
       box-shadow: 0 10px 25px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.03);
     }
-    h2{margin:0 0 8px; font-size:20px}
-    .tag{display:inline-block; font-size:12px; padding:4px 8px; border:1px solid #334155; border-radius:999px; color:var(--muted);}
+    h2{
+      margin:0 0 8px;
+      font-size:20px;
+      color: var(--accent); /* Títulos en color llamativo */
+    }
+    .tag{
+      display:inline-block; font-size:12px; padding:4px 8px; border:1px solid var(--highlight); border-radius:999px; color:var(--highlight);
+    }
     .imgwrap{display:flex; align-items:center; gap:10px; margin: 10px 0 14px;}
     .imgwrap svg{width:48px; height:48px; flex:0 0 auto;}
     p{margin: 0 0 8px; color: var(--muted);}
-    ul{margin:0 0 0 18px}
+    ul{margin:0 0 0 18px; color: var(--muted);}
     footer{max-width:1024px; margin: 24px auto 70px; padding: 0 16px; color: var(--muted);}
     a{color: var(--accent)}
-    .example{font-size: 14px; color: #9aa7b7;}
+    .example{font-size: 14px; color: var(--highlight);}
     @media (prefers-color-scheme: light){
       :root{--bg:#f7fafc; --card:#ffffff; --ink:#111827; --muted:#334155;}
-      body{background: radial-gradient(1200px 600px at 10% 0%, #e5e7eb 0, #f7fafc 70%);}
+      body{background: linear-gradient(1200px 600px at 10% 0%, #e5e7eb 0, #f7fafc 70%);}
       nav a{border-color:#cbd5e1}
       section.card{border-color:#e5e7eb; box-shadow: 0 6px 16px rgba(0,0,0,.08), inset 0 1px 0 rgba(0,0,0,.03);}
     }
@@ -81,7 +93,6 @@
     <!-- DNS -->
     <section id="dns" class="card">
       <div class="imgwrap">
-        <!-- Globe + tag icon (inline SVG, so no external images needed) -->
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
           <path d="M2 12h20M12 2c3 3 3 17 0 20M12 2c-3 3-3 17 0 20" stroke="currentColor" stroke-width="1.5"/>
@@ -96,7 +107,6 @@
     <!-- WEB -->
     <section id="web" class="card">
       <div class="imgwrap">
-        <!-- Window icon -->
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/>
           <path d="M3 8h18" stroke="currentColor" stroke-width="1.5"/>
@@ -112,7 +122,6 @@
     <!-- FTP -->
     <section id="ftp" class="card">
       <div class="imgwrap">
-        <!-- Arrow up/down in a folder -->
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path d="M3 7h6l2 2h10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z" stroke="currentColor" stroke-width="1.5"/>
           <path d="M12 17V9m0 0l-2 2m2-2l2 2" stroke="currentColor" stroke-width="1.5"/>
@@ -130,7 +139,6 @@
     <!-- DHCP -->
     <section id="dhcp" class="card">
       <div class="imgwrap">
-        <!-- Network plug -->
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <rect x="4" y="3" width="16" height="8" rx="2" stroke="currentColor" stroke-width="1.5"/>
           <path d="M8 11v5m8-5v5M6 19h12" stroke="currentColor" stroke-width="1.5"/>
@@ -144,7 +152,6 @@
     <!-- Correo -->
     <section id="mail" class="card">
       <div class="imgwrap">
-        <!-- Mail + arrows -->
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
           <path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="1.5"/>
@@ -167,3 +174,4 @@
   </footer>
 </body>
 </html>
+
