@@ -59,12 +59,12 @@
     }
     .imgwrap{display:flex; align-items:center; gap:10px; margin: 10px 0 14px;}
     .imgwrap svg{width:48px; height:48px; flex:0 0 auto;}
-    
-    /* Ajuste para las imágenes */
+
+    /* Asegura que las imágenes no se desborden de los contenedores */
     .imgwrap img {
-      max-width: 200px; /* Limita el tamaño máximo de la imagen */
-      height: auto;     /* Mantiene las proporciones de la imagen */
-      margin-top: 10px; /* Espaciado superior */
+      max-width: 100%;   /* Asegura que la imagen no se desborde horizontalmente */
+      max-height: 200px; /* Ajusta la altura máxima */
+      object-fit: contain; /* Mantiene la proporción sin recortar ni desbordar */
     }
 
     p{margin: 0 0 8px; color: var(--muted);}
@@ -178,8 +178,5 @@
     </section>
   </main>
 
-  <footer>
-    <p><strong>Consejo:</strong> Puedes reemplazar los íconos SVG por imágenes reales (PNG/JPG) si tu profesor lo pide. Guarda las imágenes en una carpeta <code>img/</code> y cámbialas en el HTML dentro de cada sección.</p>
-  </footer>
 </body>
 </html>
