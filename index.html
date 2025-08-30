@@ -59,6 +59,14 @@
     }
     .imgwrap{display:flex; align-items:center; gap:10px; margin: 10px 0 14px;}
     .imgwrap svg{width:48px; height:48px; flex:0 0 auto;}
+    
+    /* Ajuste para las imágenes */
+    .imgwrap img {
+      max-width: 200px; /* Limita el tamaño máximo de la imagen */
+      height: auto;     /* Mantiene las proporciones de la imagen */
+      margin-top: 10px; /* Espaciado superior */
+    }
+
     p{margin: 0 0 8px; color: var(--muted);}
     ul{margin:0 0 0 18px; color: var(--muted);}
     footer{max-width:1024px; margin: 24px auto 70px; padding: 0 16px; color: var(--muted);}
@@ -98,7 +106,7 @@
       <p><strong>¿Qué es?</strong> Un sistema que convierte nombres de dominio legibles (p. ej., <code>www.google.com</code>) en direcciones IP que usan las computadoras.</p>
       <p><strong>¿Para qué sirve?</strong> Para que puedas escribir nombres fáciles en lugar de números largos.</p>
       <p class="example"><strong>Ejemplo:</strong> <code>www.google.com</code> → <code>142.250.72.36</code> (IP de ejemplo).</p>
-      <img src="img.dns.webp"
+      <img src="img.dns.webp" alt="Imagen de DNS" />
     </section>
 
     <!-- WEB -->
@@ -114,7 +122,7 @@
       <p><strong>¿Qué es?</strong> Un software (como Apache, Nginx o IIS) que publica sitios y APIs en Internet.</p>
       <p><strong>Función:</strong> Responder a peticiones <code>HTTP/HTTPS</code> y devolver HTML, CSS, JS, imágenes o datos.</p>
       <p class="example"><strong>Ejemplos diarios:</strong> redes sociales, periódicos en línea, plataformas de educación y banca web.</p>
-      <img src="img.serv.web.png"
+      <img src="img.serv.web.png" alt="Imagen de servidor web" />
     </section>
 
     <!-- FTP -->
@@ -132,7 +140,7 @@
         <li><strong>SFTP:</strong> transferencia segura sobre SSH (distinto a FTP clásico).</li>
       </ul>
       <p class="example"><strong>Ejemplo:</strong> actualizar el contenido de un sitio subiendo imágenes o documentos.</p>
-      <img src="img.ftp.webp"
+      <img src="img.ftp.webp" alt="Imagen de servidor FTP" />
     </section>
 
     <!-- DHCP -->
@@ -146,7 +154,7 @@
       </div>
       <p><strong>¿Qué hace?</strong> <em>Asigna automáticamente</em> direcciones IP, máscara, puerta de enlace y DNS a los dispositivos de la red.</p>
       <p class="example"><strong>Ejemplo:</strong> el router de tu casa da una IP distinta a tu teléfono y a tu laptop cuando se conectan al Wi‑Fi.</p>
-      <img src="img.dhcp.png"
+      <img src="img.dhcp.png" alt="Imagen de servidor DHCP" />
     </section>
 
     <!-- Correo -->
@@ -166,7 +174,7 @@
         <li><strong>POP3</strong> (entrada): descarga los mensajes al dispositivo; por defecto no sincroniza carpetas ni estados.</li>
       </ul>
       <p class="example"><strong>Ejemplo:</strong> tu app de correo usa SMTP para enviar y IMAP/POP3 para descargar/leer.</p>
-      <img src="img.correos.jpeg"
+      <img src="img.correos.jpeg" alt="Imagen de servidor de correos" />
     </section>
   </main>
 
