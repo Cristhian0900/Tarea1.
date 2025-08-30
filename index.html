@@ -1,187 +1,102 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
   <title>Servidores de Internet</title>
   <style>
-    :root{
-      --bg:#f1f5f9;        /* Fondo suave gris claro */
-      --card:#ffffff;      /* Fondo de las tarjetas blanco */
-      --ink:#333333;       /* Texto oscuro para legibilidad */
-      --muted:#6b7280;     /* Texto tenue gris */
-      --accent:#4ade80;    /* Verde suave para enlaces */
-      --highlight:#6ee7b7; /* Verde más claro para los ejemplos */
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      color: #333;
     }
-    *{box-sizing:border-box}
-    html,body{margin:0; padding:0; background: var(--bg); color:var(--ink); font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";}
-    header{
-      padding: 48px 16px 24px;
-      text-align:center;
-    }
-    h1{
-      margin:0 0 8px;
-      font-size: clamp(28px, 6vw, 46px);
-      line-height:1.1;
-      letter-spacing: .2px;
-      font-weight:800;
-      color: var(--accent);
-    }
-    header p{margin: 0 auto; max-width: 900px; color: var(--muted);}
-    nav{
-      margin: 20px auto 8px;
-      display:flex; flex-wrap:wrap; gap: 8px; justify-content:center;
-    }
-    nav a{
-      text-decoration:none; color:var(--accent); border:1px solid #d1d5db; padding:8px 12px; border-radius:999px; font-size:14px;
-    }
-    nav a:hover{
-      background-color: var(--accent);
+    header {
+      background: #222;
       color: white;
-      border-color: var(--accent);
+      text-align: center;
+      padding: 20px;
     }
-    main{
-      max-width: 1024px; margin: 24px auto 60px; padding: 0 16px;
-      display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:16px;
+    h1 {
+      margin: 0;
     }
-    section.card{
-      background: var(--card);
-      border:1px solid #d1d5db; border-radius:16px; padding:18px;
-      box-shadow: 0 6px 16px rgba(0,0,0,.1), inset 0 1px 0 rgba(255,255,255,.03);
+    section {
+      background: white;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 900px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
-    h2{
-      margin:0 0 8px;
-      font-size:20px;
-      color: var(--accent); /* Títulos en verde suave */
+    section img {
+      max-width: 200px;
+      display: block;
+      margin: 10px auto;
     }
-    .tag{
-      display:inline-block; font-size:12px; padding:4px 8px; border:1px solid var(--accent); border-radius:999px; color:var(--accent);
+    h2 {
+      color: #004080;
     }
-    .imgwrap{display:flex; align-items:center; gap:10px; margin: 10px 0 14px;}
-    .imgwrap svg{width:48px; height:48px; flex:0 0 auto;}
-
-    /* Asegura que las imágenes no se desborden de los contenedores */
-    .imgwrap img {
-      max-width: 80px;   /* Ajusta la imagen para que sea pequeña */
-      max-height: 80px;  /* Ajusta la altura máxima de la imagen */
-      object-fit: contain; /* Mantiene la proporción sin recortar ni desbordar */
-      display: block;    /* Evita que haya espacio extra debajo de la imagen */
-      margin: 0 auto;    /* Centra la imagen dentro de su contenedor */
-    }
-
-    p{margin: 0 0 8px; color: var(--muted);}
-    ul{margin:0 0 0 18px; color: var(--muted);}
-    footer{max-width:1024px; margin: 24px auto 70px; padding: 0 16px; color: var(--muted);}
-    a{color: var(--accent)}
-    .example{font-size: 14px; color: var(--highlight);} /* Ejemplos con verde suave */
-    @media (prefers-color-scheme: light){
-      :root{--bg:#ffffff; --card:#f9fafb; --ink:#111827; --muted:#6b7280;}
-      body{background: var(--bg);}
-      nav a{border-color:#d1d5db;}
-      section.card{border-color:#e5e7eb; box-shadow: 0 6px 16px rgba(0,0,0,.08), inset 0 1px 0 rgba(0,0,0,.03);}
+    .example {
+      font-style: italic;
+      color: #555;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Servidores de Internet</h1>
-    <p>Resumen simple de los servidores más comunes: <strong>DNS, WEB, FTP, DHCP</strong> y <strong>Correo</strong>. Cada tarjeta explica <em>qué es</em>, <em>para qué sirve</em> y muestra un <em>ejemplo</em>.</p>
-    <nav>
-      <a href="#dns">DNS</a>
-      <a href="#web">WEB</a>
-      <a href="#ftp">FTP</a>
-      <a href="#dhcp">DHCP</a>
-      <a href="#mail">Correo</a>
-    </nav>
+    <p>Conoce los servidores más comunes: DNS, WEB, FTP, DHCP y Correo Electrónico</p>
   </header>
 
-  <main>
-    <!-- DNS -->
-    <section id="dns" class="card">
-      <div class="imgwrap">
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
-          <path d="M2 12h20M12 2c3 3 3 17 0 20M12 2c-3 3-3 17 0 20" stroke="currentColor" stroke-width="1.5"/>
-        </svg>
-        <h2>Servidor DNS <span class="tag">Traducción de nombres</span></h2>
-      </div>
-      <p><strong>¿Qué es?</strong> Un sistema que convierte nombres de dominio legibles (p. ej., <code>www.google.com</code>) en direcciones IP que usan las computadoras.</p>
-      <p><strong>¿Para qué sirve?</strong> Para que puedas escribir nombres fáciles en lugar de números largos.</p>
-      <p class="example"><strong>Ejemplo:</strong> <code>www.google.com</code> → <code>142.250.72.36</code> (IP de ejemplo).</p>
-      <img src="img.dns.webp" alt="Imagen de DNS" />
-    </section>
+  <!-- DNS -->
+  <section id="dns">
+    <h2>Servidor DNS</h2>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/DNS-diagram-es.svg" alt="Servidor DNS">
+    <p><strong>¿Qué es?</strong> El Sistema de Nombres de Dominio (DNS) es como la agenda telefónica de Internet. Traduce nombres fáciles de recordar, como <code>www.google.com</code>, en direcciones IP que las computadoras entienden.</p>
+    <p><strong>¿Para qué sirve?</strong> Permite que podamos navegar en Internet usando nombres en lugar de memorizar números largos.</p>
+    <p class="example"><strong>Ejemplo:</strong> <code>www.google.com</code> → <code>142.250.72.36</code></p>
+  </section>
 
-    <!-- WEB -->
-    <section id="web" class="card">
-      <div class="imgwrap">
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/>
-          <path d="M3 8h18" stroke="currentColor" stroke-width="1.5"/>
-          <circle cx="7" cy="6" r="1" fill="currentColor"/><circle cx="10" cy="6" r="1" fill="currentColor"/><circle cx="13" cy="6" r="1" fill="currentColor"/>
-        </svg>
-        <h2>Servidor WEB <span class="tag">Entrega páginas</span></h2>
-      </div>
-      <p><strong>¿Qué es?</strong> Un software (como Apache, Nginx o IIS) que publica sitios y APIs en Internet.</p>
-      <p><strong>Función:</strong> Responder a peticiones <code>HTTP/HTTPS</code> y devolver HTML, CSS, JS, imágenes o datos.</p>
-      <p class="example"><strong>Ejemplos diarios:</strong> redes sociales, periódicos en línea, plataformas de educación y banca web.</p>
-      <img src="img.serv.web.png" alt="Imagen de servidor web" />
-    </section>
+  <!-- WEB -->
+  <section id="web">
+    <h2>Servidor WEB</h2>
+    <img src="https://www.hostinger.es/tutoriales/wp-content/uploads/sites/7/2021/06/servidor-web-ejemplo.webp" alt="Servidor Web">
+    <p><strong>¿Qué es?</strong> Es un programa que almacena y entrega páginas web a los navegadores cuando un usuario las solicita.</p>
+    <p><strong>Función:</strong> Responder a las peticiones de los usuarios (HTTP/HTTPS) enviando sitios web completos con texto, imágenes y videos.</p>
+    <p class="example"><strong>Ejemplo:</strong> Cuando visitas YouTube, el servidor web de Google te envía la página principal y sus contenidos.</p>
+  </section>
 
-    <!-- FTP -->
-    <section id="ftp" class="card">
-      <div class="imgwrap">
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M3 7h6l2 2h10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z" stroke="currentColor" stroke-width="1.5"/>
-          <path d="M12 17V9m0 0l-2 2m2-2l2 2" stroke="currentColor" stroke-width="1.5"/>
-        </svg>
-        <h2>Servidor FTP <span class="tag">Archivos</span></h2>
-      </div>
-      <p><strong>¿Para qué se usa?</strong> Para <em>subir</em> y <em>descargar</em> archivos entre un cliente y un servidor.</p>
-      <ul>
-        <li><strong>FTP/FTPS:</strong> versión básica y con cifrado (TLS).</li>
-        <li><strong>SFTP:</strong> transferencia segura sobre SSH (distinto a FTP clásico).</li>
-      </ul>
-      <p class="example"><strong>Ejemplo:</strong> actualizar el contenido de un sitio subiendo imágenes o documentos.</p>
-      <img src="img.ftp.webp" alt="Imagen de servidor FTP" />
-    </section>
+  <!-- FTP -->
+  <section id="ftp">
+    <h2>Servidor FTP</h2>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/File_Transfer_Protocol_Simplified.png" alt="Servidor FTP">
+    <p><strong>¿Qué es?</strong> FTP significa File Transfer Protocol. Se usa para transferir archivos entre una computadora y un servidor en Internet.</p>
+    <p><strong>¿Para qué sirve?</strong> Permite subir o bajar documentos, imágenes y programas de manera rápida. Los usuarios suelen necesitar usuario y contraseña.</p>
+    <p class="example"><strong>Ejemplo:</strong> Un programador actualiza su página web subiendo nuevos archivos al servidor por FTP.</p>
+  </section>
 
-    <!-- DHCP -->
-    <section id="dhcp" class="card">
-      <div class="imgwrap">
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <rect x="4" y="3" width="16" height="8" rx="2" stroke="currentColor" stroke-width="1.5"/>
-          <path d="M8 11v5m8-5v5M6 19h12" stroke="currentColor" stroke-width="1.5"/>
-        </svg>
-        <h2>Servidor DHCP <span class="tag">IP automáticas</span></h2>
-      </div>
-      <p><strong>¿Qué hace?</strong> <em>Asigna automáticamente</em> direcciones IP, máscara, puerta de enlace y DNS a los dispositivos de la red.</p>
-      <p class="example"><strong>Ejemplo:</strong> el router de tu casa da una IP distinta a tu teléfono y a tu laptop cuando se conectan al Wi‑Fi.</p>
-      <img src="img.dhcp.png" alt="Imagen de servidor DHCP" />
-    </section>
+  <!-- DHCP -->
+  <section id="dhcp">
+    <h2>Servidor DHCP</h2>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/49/DHCP_diagram-es.png" alt="Servidor DHCP">
+    <p><strong>¿Qué es?</strong> El servidor DHCP (Dynamic Host Configuration Protocol) asigna direcciones IP automáticamente a los dispositivos que se conectan a una red.</p>
+    <p><strong>¿Para qué sirve?</strong> Evita que tengas que configurar la IP manualmente en tu computadora o celular.</p>
+    <p class="example"><strong>Ejemplo:</strong> Cuando conectas tu móvil al Wi-Fi de casa, el router actúa como servidor DHCP y le da una IP.</p>
+  </section>
 
-    <!-- Correo -->
-    <section id="mail" class="card">
-      <div class="imgwrap">
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
-          <path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="1.5"/>
-          <path d="M8 21c0-2 2-3 4-3s4 1 4 3" stroke="currentColor" stroke-width="1.5"/>
-        </svg>
-        <h2>Servidor de Correos <span class="tag">SMTP / IMAP / POP3</span></h2>
-      </div>
-      <p><strong>Enviar vs Recibir:</strong></p>
-      <ul>
-        <li><strong>SMTP</strong> (salida): protocolo para <em>enviar</em> correos desde el cliente hacia el servidor y entre servidores.</li>
-        <li><strong>IMAP</strong> (entrada): <em>recibir y sincronizar</em> correos con el servidor, manteniendo carpetas y estado en todos tus dispositivos.</li>
-        <li><strong>POP3</strong> (entrada): descarga los mensajes al dispositivo; por defecto no sincroniza carpetas ni estados.</li>
-      </ul>
-      <p class="example"><strong>Ejemplo:</strong> tu app de correo usa SMTP para enviar y IMAP/POP3 para descargar/leer.</p>
-      <img src="img.correos.jpeg" alt="Imagen de servidor de correos" />
-    </section>
-  </main>
+  <!-- CORREO -->
+  <section id="correo">
+    <h2>Servidor de Correos</h2>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Email_protocolo.png" alt="Servidor de Correo Electrónico">
+    <p><strong>¿Qué es?</strong> Son sistemas que permiten enviar y recibir correos electrónicos en Internet.</p>
+    <p><strong>Enviar vs Recibir:</strong></p>
+    <ul>
+      <li><strong>SMTP</strong> → para <em>enviar</em> correos.</li>
+      <li><strong>IMAP</strong> → para <em>recibir y sincronizar</em> correos en varios dispositivos.</li>
+      <li><strong>POP3</strong> → para <em>descargar</em> correos en un solo dispositivo.</li>
+    </ul>
+    <p class="example"><strong>Ejemplo:</strong> Gmail usa SMTP para enviar mensajes e IMAP para que tus correos estén sincronizados en todos tus dispositivos.</p>
+  </section>
 
-  <footer>
-    <p><strong>Consejo:</strong> Puedes reemplazar los íconos SVG por imágenes reales (PNG/JPG) si tu profesor lo pide. Guarda las imágenes en una carpeta <code>img/</code> y cámbialas en el HTML dentro de cada sección.</p>
-  </footer>
 </body>
 </html>
